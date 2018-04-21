@@ -158,7 +158,7 @@ extension String {
         }
         
         let buffer = UnsafeMutablePointer<Int8>.allocate(capacity: iconvBufferLength)
-        defer { buffer.deallocate(capacity: iconvBufferLength) }
+        defer { buffer.deallocate() }
         
         var inBytesLeft = Int(count)
         var inBuf: UnsafeMutablePointer<Int8>? = UnsafeMutablePointer<Int8>(mutating: pointer)
